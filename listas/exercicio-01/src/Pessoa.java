@@ -31,7 +31,7 @@ public class Pessoa {
         System.out.println("Nome: " + getNome());
         System.out.println("Data de nascimento: " + getDate());
         System.out.println("Altura: " + getAltura());
-        System.out.println("Idade: " + calculaIdade());
+        System.out.println("Idade: " + calculaIdade() + "anos");
     }
 
     private int calculaIdade() {
@@ -42,10 +42,7 @@ public class Pessoa {
 
             Period diff = Period.between(parsedDate, now);
 
-            System.out.println("Diferença em anos eh de: " + diff.getYears());
-
-            System.out.println(parsedDate);
-            return 1;
+            return diff.getYears();
         }
         catch (Exception ParseException) {
             throw new Error("Não foi possível calcular a idade! Erro: " + ParseException);
