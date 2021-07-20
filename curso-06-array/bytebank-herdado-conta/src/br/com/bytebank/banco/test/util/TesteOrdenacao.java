@@ -7,7 +7,7 @@ import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 import java.util.*;
 
-public class Teste {
+public class TesteOrdenacao {
     public static void main(String[] args) {
         Conta cc1 = new ContaCorrente(22, 33);
         Cliente clienteCC1 = new Cliente();
