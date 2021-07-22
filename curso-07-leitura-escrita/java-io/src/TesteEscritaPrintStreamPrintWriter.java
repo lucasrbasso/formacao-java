@@ -15,7 +15,7 @@ public class TesteEscritaPrintStreamPrintWriter {
 
         // Ou //
 
-        PrintWriter pw = new PrintWriter("lorem3.txt");
+        PrintWriter pw = new PrintWriter("lorem3.txt"); // Aceita charset
 
         pw.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");
         pw.print("tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
