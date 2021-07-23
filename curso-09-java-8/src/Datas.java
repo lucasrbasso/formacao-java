@@ -6,12 +6,12 @@ public class Datas {
         LocalDate hoje = LocalDate.now();
         System.out.println(hoje);
 
-        LocalDate olimpiadasRio = LocalDate.of(2021, Month.JULY, 27);
+        LocalDate olimpiadasTokyo = LocalDate.of(2021, Month.JULY, 20);
 
-        Period period = Period.between(hoje, olimpiadasRio);
+        Period period = Period.between(hoje, olimpiadasTokyo);
         System.out.println(period.getYears());
 
-        LocalDate proximasOlimpiadas = olimpiadasRio.plusYears(4);
+        LocalDate proximasOlimpiadas = olimpiadasTokyo.plusYears(4);
         System.out.println(proximasOlimpiadas);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -24,7 +24,7 @@ public class Datas {
         LocalDateTime agora = LocalDateTime.now();
         System.out.println(agora.format(formatterTime));
 
-        LocalTime intervalo = LocalTime.of(15,30);
+        LocalTime intervalo = LocalTime.of(4,60);
         System.out.println(intervalo);
 
     }
