@@ -1,14 +1,14 @@
 package br.com.alura;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Curso {
 
     private String nome;
     private String instrutor;
     private List<Aula> aulas = new LinkedList<Aula>();
+    private Set<Aluno> alunos = new HashSet<>();
+    private Map<Integer, Aluno> matriculaParaAluno  = new HashMap<>();
 
     public Curso(String nome, String instrutor) {
         this.nome = nome;
@@ -33,6 +33,23 @@ public class Curso {
 
     public int getTempoTotal() {
         return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+    }
+
+    public void matricula(Aluno aluno){
+        this.alunos.add(aluno);
+        this.matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
+    }
+
+    public Aluno buscaMatriculado(int matricula) {
+        return this.matriculaParaAluno.get(matricula);
+    }
+
+    public boolean estaMatriculado(Aluno aluno) {
+        return this.alunos.contains(aluno);
+    }
+
+    public Set<Aluno> getAlunos() {
+        return Collections.unmodifiableSet(alunos);
     }
 
     @Override
