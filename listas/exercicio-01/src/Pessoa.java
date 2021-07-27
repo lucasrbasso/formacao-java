@@ -1,3 +1,4 @@
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -35,17 +36,12 @@ public class Pessoa {
     }
 
     private int calculaIdade() {
-        try {
-            formatter = formatter.withLocale(Locale.ENGLISH);
-            LocalDate parsedDate = LocalDate.parse(getDate(),formatter);
-            LocalDate now = LocalDate.now();
+        formatter = formatter.withLocale(Locale.ENGLISH);
+        LocalDate parsedDate = LocalDate.parse(getDate(),formatter);
+        LocalDate now = LocalDate.now();
 
-            Period diff = Period.between(parsedDate, now);
+        Period diff = Period.between(parsedDate, now);
 
-            return diff.getYears();
-        }
-        catch (Exception ParseException) {
-            throw new Error("Não foi possível calcular a idade! Erro: " + ParseException);
-        }
+        return diff.getYears();
     }
 }
